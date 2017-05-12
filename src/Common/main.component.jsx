@@ -4,20 +4,13 @@ import axios from "axios";
 
 
 class Main extends Component {
-    logCars() {
-        axios.get("http://localhost:3000/api/respond")
-        .then((res) => {
-            console.log(res.data);
-        });
-    }
-
 	render(){
 		return(
 			 <div>
                 <nav className="navbar navbar-default">
                     <div className="container-fluid">
                         <div className="navbar-header">
-                            <a className="navbar-brand" onClick={this.logCars}>Scotch Cars</a>
+                            <a className="navbar-brand" href="/">Scotch Cars</a>
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul className="nav navbar-nav">

@@ -1,41 +1,61 @@
 import React, {Component} from "react";
 import {browserHistory} from 'react-router';
+import axios from "axios";
 
 class CarDetail extends Component {
+	constructor() {
+		super();
+		this.state = {cars: []};
+	}
+
+	componentDidMount() {
+    	this.getCars();
+  	}
+
+  	getCars() {
+		axios.get("http://localhost:8000/api/sendCars")
+        .then((response) => {
+            this.setState({cars: response.data})
+		});
+	}
 	handleRedirect() {
 		browserHistory.push("/cars");
 	}	
 
 	render() {
-		const cars = this.props.route.data;
 		const id = this.props.params.id;
-		const car = cars.filter(car => {
+		const car = this.state.cars.map(car => {
 			if(car.id == id) {
-				return car;
-			}
-		});
-
-		return (
-			<div>
-				<h1>{car[0].name}</h1>
+				return(
+						<div key={car.id}>
+				<h1>{car.name}</h1>
 				<div className="row">
 					<div className="col-sm-6 col-md-4">
 						<div className="thumbnail">
-							<img src={car[0].media} alt={car[0].name}/>
+							<img src={car.media} alt={car.name}/>
 						</div>
 					</div>
 					<div className="col-sm-6 col-md-4">
 						<ul>
-							<li><strong>Model</strong>: {car[0].model}</li>
-							<li><strong>Make</strong>: {car[0].make}</li>	
-							<li><strong>Year</strong>: {car[0].year}</li>	
-							<li><strong>Price</strong>: {car[0].price}</li>	
+							<li><strong>Model</strong>: {car.model}</li>
+							<li><strong>Make</strong>: {car.make}</li>	
+							<li><strong>Year</strong>: {car.year}</li>	
+							<li><strong>Price</strong>: {car.price}</li>	
 						</ul>
 					</div>
 					<div className="col-md-12">
 						<button className="btn btn-default" onClick={this.handleRedirect.bind(this)}>Go to Cars</button>
 					</div>				
 				</div>
+				</div>
+					);
+				
+			} 
+		});
+		
+		return (
+			<div>
+				{car}
 			</div>	
 		);
 	}

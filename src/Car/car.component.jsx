@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {Link} from "react-router";
 import axios from "axios";
+import ReactDOM from "react-dom";
+import $ from "jquery";
 
 class Car extends Component {
 
@@ -10,7 +12,8 @@ class Car extends Component {
 	}
 
 	componentDidMount() {
-    this.getCars();
+    	this.getCars();
+    	$(this.refs.component).hide().fadeIn(500);
   	}
 
   	getCars() {
@@ -32,7 +35,7 @@ class Car extends Component {
 				)
 			});
 			return (
-				<div>
+				<div ref="component">
 					<h1>Cars Page</h1>
 					<div className="list-group">
 						{carNode}

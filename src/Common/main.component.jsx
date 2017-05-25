@@ -27,6 +27,8 @@ class Main extends Component {
             </div>
 		);
 	}
+
+    
 }
 
 export default Main

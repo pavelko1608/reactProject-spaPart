@@ -12,7 +12,7 @@ class CarDetail extends Component {
 
 	componentDidMount() {
     	this.getCars();
-    	$(this.refs.image).hide().fadeIn(500);
+    	$(this.refs.component).hide().fadeIn(500);
   	}
 
   	getCars() {
@@ -24,7 +24,7 @@ class CarDetail extends Component {
 	handleRedirect() {
 		browserHistory.push("/cars");
 	}	
-
+//SET A SEPARATE VARIABLE FOR EACH THING (E.G. CARID OR CARNAME) TO THEN BE ABLE TO MANIPULATE DOM MORE FREELY!!
 	render() {
 		const id = this.props.params.id;
 		const car = this.state.cars.map(car => {
@@ -56,7 +56,7 @@ class CarDetail extends Component {
 		});
 		
 		return (
-			<div ref="image">
+			<div ref="component">
 				{car}
 			</div>	
 		);

@@ -28263,6 +28263,14 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactDom = __webpack_require__(/*! react-dom */ 36);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _jquery = __webpack_require__(/*! jquery */ 279);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28281,12 +28289,21 @@
 		}
 	
 		_createClass(Home, [{
+			key: "componentDidMount",
+			value: function componentDidMount() {
+				(0, _jquery2.default)(this.refs.component).hide().fadeIn(500);
+			}
+		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
-					"h1",
-					null,
-					"Home Page"
+					"div",
+					{ ref: "component" },
+					_react2.default.createElement(
+						"h1",
+						null,
+						"Home Page"
+					)
 				);
 			}
 		}]);
@@ -28315,6 +28332,14 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactDom = __webpack_require__(/*! react-dom */ 36);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _jquery = __webpack_require__(/*! jquery */ 279);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28333,12 +28358,21 @@
 		}
 	
 		_createClass(About, [{
+			key: "componentDidMount",
+			value: function componentDidMount() {
+				(0, _jquery2.default)(this.refs.component).hide().fadeIn(500);
+			}
+		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
-					"h1",
-					null,
-					"About Page"
+					"div",
+					{ ref: "component" },
+					_react2.default.createElement(
+						"h1",
+						null,
+						"About Page"
+					)
 				);
 			}
 		}]);
@@ -28373,6 +28407,14 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
+	var _reactDom = __webpack_require__(/*! react-dom */ 36);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _jquery = __webpack_require__(/*! jquery */ 279);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28397,6 +28439,7 @@
 			key: "componentDidMount",
 			value: function componentDidMount() {
 				this.getCars();
+				(0, _jquery2.default)(this.refs.component).hide().fadeIn(500);
 			}
 		}, {
 			key: "getCars",
@@ -28422,7 +28465,7 @@
 				});
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ ref: "component" },
 					_react2.default.createElement(
 						"h1",
 						null,
@@ -32223,7 +32266,7 @@
 			key: "componentDidMount",
 			value: function componentDidMount() {
 				this.getCars();
-				(0, _jquery2.default)(this.refs.image).hide().fadeIn(500);
+				(0, _jquery2.default)(this.refs.component).hide().fadeIn(500);
 			}
 		}, {
 			key: "getCars",
@@ -32239,6 +32282,8 @@
 			value: function handleRedirect() {
 				_reactRouter.browserHistory.push("/cars");
 			}
+			//SET A SEPARATE VARIABLE FOR EACH THING (E.G. CARID OR CARNAME) TO THEN BE ABLE TO MANIPULATE DOM MORE FREELY!!
+	
 		}, {
 			key: "render",
 			value: function render() {
@@ -32335,7 +32380,7 @@
 	
 				return _react2.default.createElement(
 					"div",
-					{ ref: "image" },
+					{ ref: "component" },
 					car
 				);
 			}

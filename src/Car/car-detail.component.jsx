@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {browserHistory} from 'react-router';
 import axios from "axios";
+import ReactDOM from "react-dom";
+import $ from "jquery";
 
 class CarDetail extends Component {
 	constructor() {
@@ -10,6 +12,7 @@ class CarDetail extends Component {
 
 	componentDidMount() {
     	this.getCars();
+    	$(this.refs.image).hide().fadeIn(500);
   	}
 
   	getCars() {
@@ -27,11 +30,11 @@ class CarDetail extends Component {
 		const car = this.state.cars.map(car => {
 			if(car.id == id) {
 				return(
-						<div key={car.id}>
+						<div key={car.id} >
 				<h1>{car.name}</h1>
 				<div className="row">
 					<div className="col-sm-6 col-md-4">
-						<div className="thumbnail">
+						<div className="thumbnail" >
 							<img src={car.media} alt={car.name}/>
 						</div>
 					</div>
@@ -48,16 +51,16 @@ class CarDetail extends Component {
 					</div>				
 				</div>
 				</div>
-					);
-				
+					);	
 			} 
 		});
 		
 		return (
-			<div>
+			<div ref="image">
 				{car}
 			</div>	
 		);
+		
 	}
 }
 

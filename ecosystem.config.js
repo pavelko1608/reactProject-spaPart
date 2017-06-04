@@ -28,7 +28,7 @@ module.exports = {
       host : '138.68.99.113',
       ref  : 'origin/master',
       repo : 'https://github.com/pavelko1608/reactProject-spaPart.git',
-      path : '/home/deploy/loginapp',
+      path : '/home/deploy/react-SPA',
       'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
     }
   }

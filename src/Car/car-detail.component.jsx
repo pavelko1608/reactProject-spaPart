@@ -29,8 +29,8 @@ class CarDetail extends Component {
 		const id = this.props.params.id;
 		const car = this.state.cars.map(car => {
 			if(car.id == id) {
-				return(
-						<div key={car.id} >
+				return(	
+					<div key={car.id}>
 				<h1>{car.name}</h1>
 				<div className="row">
 					<div className="col-sm-6 col-md-4">
@@ -51,6 +51,7 @@ class CarDetail extends Component {
 					</div>				
 				</div>
 				</div>
+				
 					);	
 			} 
 		});

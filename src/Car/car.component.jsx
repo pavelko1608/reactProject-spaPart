@@ -17,7 +17,7 @@ class Car extends Component {
   	}
 
   	getCars() {
-		axios.get("http://46.101.114.172/api/sendCars")
+		axios.get("http://139.59.213.105:8000/api/sendCars")
         .then((response) => {
             this.setState({cars: response.data})
 		});

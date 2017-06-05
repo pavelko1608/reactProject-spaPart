@@ -4,14 +4,10 @@ module.exports = {
    * http://pm2.keymetrics.io/docs/usage/application-declaration/
    */
   apps : [
-
     // First application
     {
-      name      : 'SPA',
+      name      : 'spaPart',
       script    : 'index.js',
-      env: {
-        COMMON_VARIABLE: 'true'
-      },
       env_production : {
         NODE_ENV: 'production'
       }
@@ -24,12 +20,12 @@ module.exports = {
    */
   deploy : {
     production : {
-      user : 'root',
-      host : '138.68.99.113',
+      user : 'spa',
+      host : '207.154.244.129',
       ref  : 'origin/master',
       repo : 'https://github.com/pavelko1608/reactProject-spaPart.git',
-      path : '',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
+      path : '/home/spa/spaPart',
+      'post-deploy' : 'nvm install && npm install && /home/spa/.nvm/versions/node/v6.10.3/bin/pm2 reload ecosystem.config.js --env production'
     }
   }
 };

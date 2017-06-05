@@ -27553,7 +27553,7 @@
 		_createClass(Home, [{
 			key: "componentDidMount",
 			value: function componentDidMount() {
-				(0, _jquery2.default)(this.refs.component).hide().fadeIn(500);
+				(0, _jquery2.default)(this.refs.component).hide().fadeIn(200);
 			}
 		}, {
 			key: "render",
@@ -37878,7 +37878,7 @@
 		_createClass(About, [{
 			key: "componentDidMount",
 			value: function componentDidMount() {
-				(0, _jquery2.default)(this.refs.component).hide().fadeIn(500);
+				(0, _jquery2.default)(this.refs.component).hide().fadeIn(200);
 			}
 		}, {
 			key: "render",
@@ -37954,14 +37954,14 @@
 			key: "componentDidMount",
 			value: function componentDidMount() {
 				this.getCars();
-				(0, _jquery2.default)(this.refs.component).hide().fadeIn(500);
+				(0, _jquery2.default)(this.refs.component).hide().fadeIn(200);
 			}
 		}, {
 			key: "getCars",
 			value: function getCars() {
 				var _this2 = this;
 
-				_axios2.default.get("http://localhost:8000/api/sendCars").then(function (response) {
+				_axios2.default.get("http://46.101.114.172/api/sendCars").then(function (response) {
 					_this2.setState({ cars: response.data });
 				});
 			}
@@ -41688,14 +41688,14 @@
 			key: "componentDidMount",
 			value: function componentDidMount() {
 				this.getCars();
-				(0, _jquery2.default)(this.refs.component).hide().fadeIn(500);
+				(0, _jquery2.default)(this.refs.component).hide().fadeIn(200);
 			}
 		}, {
 			key: "getCars",
 			value: function getCars() {
 				var _this2 = this;
 
-				_axios2.default.get("http://localhost:8000/api/sendCars").then(function (response) {
+				_axios2.default.get("http://46.101.114.172/api/sendCars").then(function (response) {
 					_this2.setState({ cars: response.data });
 				});
 			}

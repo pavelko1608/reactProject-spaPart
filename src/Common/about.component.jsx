@@ -4,7 +4,7 @@ import $ from "jquery";
 
 class About extends Component {
 	componentDidMount() {
-    	$(this.refs.component).hide().fadeIn(500);
+    	$(this.refs.component).hide().fadeIn(200);
   	}
 	render() {
 		return (<div ref="component"><h1>About Page</h1></div>);

@@ -12,11 +12,11 @@ class CarDetail extends Component {
 
 	componentDidMount() {
     	this.getCars();
-    	$(this.refs.component).hide().fadeIn(500);
+    	$(this.refs.component).hide().fadeIn(200);
   	}
 
   	getCars() {
-		axios.get("http://localhost:8000/api/sendCars")
+		axios.get("http://46.101.114.172/api/sendCars")
         .then((response) => {
             this.setState({cars: response.data})
 		});

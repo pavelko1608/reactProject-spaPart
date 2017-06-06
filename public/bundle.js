@@ -37961,7 +37961,7 @@
 			value: function getCars() {
 				var _this2 = this;
 
-				_axios2.default.get("http://46.101.114.172/api/sendCars").then(function (response) {
+				_axios2.default.get("http://139.59.213.105:8000/api/sendCars").then(function (response) {
 					_this2.setState({ cars: response.data });
 				});
 			}
@@ -41695,7 +41695,7 @@
 			value: function getCars() {
 				var _this2 = this;
 
-				_axios2.default.get("http://46.101.114.172/api/sendCars").then(function (response) {
+				_axios2.default.get("http://139.59.213.105:8000/api/sendCars").then(function (response) {
 					_this2.setState({ cars: response.data });
 				});
 			}

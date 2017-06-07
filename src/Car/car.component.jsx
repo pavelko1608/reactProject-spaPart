@@ -13,7 +13,7 @@ class Car extends Component {
 
 	componentDidMount() {
     	this.getCars();
-    	$(this.refs.component).hide().fadeIn(200);
+    	$(this.refs.component).hide().fadeIn(100);
   	}
 
   	getCars() {
@@ -26,20 +26,19 @@ class Car extends Component {
 	render() {
 			const carNode = this.state.cars.map((car) => {
 				return (
-					<Link
-						to={"/cars/"+car.id}
-						className="list-group-item"
+					<li className="list-group-item"><Link
+						to={"/cars/"+car.id}		
 						key={car.id}>
 						{car.name}
-					</Link>	
+					</Link></li>	
 				)
 			});
 			return (
 				<div ref="component">
-					<h1>Cars Page</h1>
-					<div className="list-group">
+					<h3>Cars Page</h3>
+					<ul className="list-group">
 						{carNode}
-					</div>	
+					</ul>	
 				</div>	
 			);	       
         

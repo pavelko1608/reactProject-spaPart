@@ -12,7 +12,7 @@ class CarDetail extends Component {
 
 	componentDidMount() {
     	this.getCars();
-    	$(this.refs.component).hide().fadeIn(200);
+    	$(this.refs.component).hide().fadeIn(100);
   	}
 
   	getCars() {
@@ -31,27 +31,26 @@ class CarDetail extends Component {
 			if(car.id == id) {
 				return(	
 					<div key={car.id}>
-				<h1>{car.name}</h1>
-				<div className="row">
-					<div className="col-sm-6 col-md-4">
-						<div className="thumbnail" >
-							<img src={car.media} alt={car.name}/>
-						</div>
+					<h2>{car.name}</h2>
+						<div className="row">
+							<div className="column small-order-2 medium-order-1">
+															
+								<div className="thumbnail" >
+									<img src={car.media} alt={car.name}/>
+								</div>
+								<button className="button" onClick={this.handleRedirect.bind(this)}>Go to Cars</button>
+							</div>	
+						
+							<div className="column small-order-1 medium-order-2">
+								<ul className="list-group">
+									<li className="list-group-item"><strong>Model</strong>: {car.model}</li>
+									<li className="list-group-item"><strong>Make</strong>: {car.make}</li>	
+									<li className="list-group-item"><strong>Year</strong>: {car.year}</li>	
+									<li className="list-group-item"><strong>Price</strong>: {car.price}</li>	
+								</ul>
+							</div>
+						</div>							
 					</div>
-					<div className="col-sm-6 col-md-4">
-						<ul>
-							<li><strong>Model</strong>: {car.model}</li>
-							<li><strong>Make</strong>: {car.make}</li>	
-							<li><strong>Year</strong>: {car.year}</li>	
-							<li><strong>Price</strong>: {car.price}</li>	
-						</ul>
-					</div>
-					<div className="col-md-12">
-						<button className="btn btn-default" onClick={this.handleRedirect.bind(this)}>Go to Cars</button>
-					</div>				
-				</div>
-				</div>
-				
 					);	
 			} 
 		});

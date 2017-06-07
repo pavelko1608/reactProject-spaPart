@@ -41718,7 +41718,7 @@
 								{ className: "row" },
 								_react2.default.createElement(
 									"div",
-									{ className: "column small-order-2 medium-order-1" },
+									{ className: "columns" },
 									_react2.default.createElement(
 										"div",
 										{ className: "thumbnail" },
@@ -41732,7 +41732,7 @@
 								),
 								_react2.default.createElement(
 									"div",
-									{ className: "column small-order-1 medium-order-2" },
+									{ className: "columns" },
 									_react2.default.createElement(
 										"ul",
 										{ className: "list-group" },

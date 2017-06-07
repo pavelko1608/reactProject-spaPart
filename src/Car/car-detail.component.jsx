@@ -33,7 +33,7 @@ class CarDetail extends Component {
 					<div key={car.id}>
 					<h2>{car.name}</h2>
 						<div className="row">
-							<div className="column small-order-2 medium-order-1">
+							<div className="columns">
 															
 								<div className="thumbnail" >
 									<img src={car.media} alt={car.name}/>
@@ -41,7 +41,7 @@ class CarDetail extends Component {
 								<button className="button" onClick={this.handleRedirect.bind(this)}>Go to Cars</button>
 							</div>	
 						
-							<div className="column small-order-1 medium-order-2">
+							<div className="columns">
 								<ul className="list-group">
 									<li className="list-group-item"><strong>Model</strong>: {car.model}</li>
 									<li className="list-group-item"><strong>Make</strong>: {car.make}</li>	
